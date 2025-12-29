@@ -39,26 +39,44 @@ ${caps.primitives.map((el: PrimitiveCapability) => `  ${el.type}: ${JSON.stringi
 const generateDocsFile = () => {
   const markdown = `# NexArt Capabilities Reference
 
-Generated: ${new Date().toISOString()}
+**Generated:** ${new Date().toISOString()}
+
+---
 
 ## Primitives
 
 ${caps.primitives
   .map(
-    (el: PrimitiveCapability) => `### ${el.type}
-- **Parameters**: ${Object.keys(el.parameters || {}).join(', ')}
-- **Description**: ${el.description || 'N/A'}
-`
+    (el: PrimitiveCapability) => {
+      const params = Object.keys(el.parameters || {});
+      return `### ${el.type}
+
+**Parameters:** ${params.length > 0 ? params.join(', ') : 'None'}
+
+**Description:** ${el.description || 'N/A'}`;
+    }
   )
-  .join('\n')}
+  .join('\n\n')}
+
+---
 
 ## Backgrounds
 
-**Textures**: ${backgroundTextures.join(', ')}
+**Available Textures:**
+
+${backgroundTextures.map((t) => `- \`${t}\``).join('\n')}
+
+---
 
 ## Motion
 
-**Sources**: ${motionSources.join(', ')}
+**Available Sources:**
+
+${motionSources.map((s) => `- \`${s}\``).join('\n')}
+
+---
+
+*This file is auto-generated. Do not edit manually.*
 `;
 
   writeFileSync(join(process.cwd(), 'docs/nexart-reference.md'), markdown);
