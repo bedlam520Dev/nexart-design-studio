@@ -14,15 +14,24 @@
 
 ---
 
-- [Code of Conduct](##code-of-conduct)
-- [Getting Started](##getting-started)
-- [Development Workflow](##development-workflow)
-- [Coding Standards](##coding-standards)
-- [Commit Guidelines](##commit-guidelines)
-- [Pull Request Process](##pull-request-process)
-- [Issue Reporting](##issue-reporting)
-- [NexArt-Specific Guidelines](##nexart-specific-guidelines)
-- [Footnotes](##footnotes)
+1. [Copyright (c) 2025 BEDLAM520 Development](#copyright-c-2025-bedlam520-development)
+   1. [Contributing to NexArt Design Studio](#contributing-to-nexart-design-studio)
+   2. [Table of Contents](#table-of-contents)
+   3. [Code of Conduct](#code-of-conduct)
+      1. [Our Standards](#our-standards)
+   4. [Getting Started](#getting-started)
+      1. [Prerequisites](#prerequisites)
+      2. [Initial Setup](#initial-setup)
+   5. [Development Workflow](#development-workflow)
+      1. [Creating a Branch](#creating-a-branch)
+      2. [Branch Naming Convention](#branch-naming-convention)
+      3. [Development Process](#development-process)
+   6. [Coding Standards](#coding-standards)
+   7. [Commit Guidelines](#commit-guidelines)
+   8. [Pull Request Process](#pull-request-process)
+   9. [Issue Reporting](#issue-reporting)
+   10. [NexArt-Specific Guidelines](#nexart-specific-guidelines)
+   11. [Footnotes](#footnotes)
 
 ---
 
