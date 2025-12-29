@@ -25,7 +25,7 @@
  > Ensure You Have The Following Installed:
    - **Node.js** ^22.x (package set to '22.x')
    - **pnpm** ^10.x or (package set to '10.26.2')
-     -- IF NEEDED RUN: 
+     - IF NEEDED RUN: 
 
        ```bash
        npm install -g pnpm
@@ -48,27 +48,27 @@
 
  > Clone The Repository
 
-```bash
-git clone https://github.com/bedlam520dev/nexart-design-studio.git
-```
+   ```bash
+   git clone https://github.com/bedlam520dev/nexart-design-studio.git
+   ```
 
  > Navigate To Project Directory
 
-```bash
-cd nexart-design-studio
-```
+   ```bash
+   cd nexart-design-studio
+   ```
 
  > Install Dependencies
 
-```bash
-pnpm install
-```
+   ```bash
+   pnpm install
+   ```
 
  > Generate NexArt Capabilities Reference File
 
-```bash
-pnpm capabilities
-```
+   ```bash
+   pnpm capabilities
+   ```
 
 ---
 
@@ -77,23 +77,24 @@ pnpm capabilities
 ---
 
  > Start Development Server
-   - Navigate to 'http://localhost:3000/runner.html' to see your art!
 
-```bash
-pnpm dev
-```
+   ```bash
+   pnpm dev
+   ```
+
+   - Navigate to 'http://localhost:3000/runner.html' to see your art!
 
  > Build For Production
 
-```bash
-pnpm build
-```
+   ```bash
+   pnpm build
+   ```
 
  > Start Production Server
 
-```bash
-pnpm start
-```
+   ```bash
+   pnpm start
+   ```
 
 ---
 
@@ -103,33 +104,33 @@ pnpm start
 
  > Type Check → '_devlogs/typecheck-*.log'
 
-```bash
-pnpm check-types
-```
+   ```bash
+   pnpm check-types
+   ```
 
  > Lint Code → '_devlogs/lint-*.log'
 
-```bash
-pnpm lint
-```
+   ```bash
+   pnpm lint
+   ```
 
  > Fix Lint Issues → '_devlogs/lint-fix-*.log'
 
-```bash
-pnpm lint:fix
-```
+   ```bash
+   pnpm lint:fix
+   ```
 
  > Format Code → '_devlogs/format-*.log'
 
-```bash
-pnpm format
-```
+   ```bash
+   pnpm format
+   ```
 
  > Check Formatting → '_devlogs/format-check-*.log'
 
-```bash
-pnpm format:check
-```
+   ```bash
+   pnpm format:check
+   ```
 
 ---
 
@@ -139,9 +140,9 @@ pnpm format:check
 
  > Runs All Checks With Logs
 
-```bash
-pnpm validate
-```
+   ```bash
+   pnpm validate
+   ```
 
 ---
 
@@ -151,9 +152,9 @@ pnpm validate
 
  > Export Sketch To NexArt Compliant Snippet
 
-```bash
-pnpm export:nexart src/art/pieces/[name]/sketch.ts
-```
+   ```bash
+   pnpm export:nexart src/art/pieces/[name]/sketch.ts
+   ```
 
 ---
 
@@ -200,9 +201,9 @@ public/
 
  > Copy The Template
 
-```bash
-cp -r src/art/pieces/nexart-template src/art/pieces/[name]
-```
+   ```bash
+   cp -r src/art/pieces/nexart-template src/art/pieces/[name]
+   ```
 
  > Edit Your Sketch
 
@@ -243,9 +244,9 @@ export const sketch: NexArtSketch = { setup, draw };
 
  > Edit 'public/runner.html' at line 24:
 
-```ts
-const { sketch } = await import('/src/art/pieces/[name]/sketch.ts');
-```
+   ```ts
+   const { sketch } = await import('/src/art/pieces/[name]/sketch.ts');
+   ```
 
  > Then View At 'http://localhost:3000/runner.html'
 
@@ -255,7 +256,7 @@ const { sketch } = await import('/src/art/pieces/[name]/sketch.ts');
 
 ---
 
- > _**CRITICAL**_: NexArt has **STRICT** requirements:
+ > ***CRITICAL***: NexArt has **STRICT** requirements:
 
    > ✅ Allowed:
      - setup() function (optional)
@@ -278,9 +279,9 @@ const { sketch } = await import('/src/art/pieces/[name]/sketch.ts');
 
  >  Export Your Sketch (EXAMPLE)
 
-```bash
-pnpm export:nexart src/art/pieces/generative-waves/sketch.ts
-```
+   ```bash
+   pnpm export:nexart src/art/pieces/generative-waves/sketch.ts
+   ```
 
  > Output example (src/art/pieces/generative-waves/nexart-export.md):
 
@@ -381,11 +382,17 @@ previewSystem(system, canvas, { mode: 'loop' }).start();
 
 ---
 
- > Run The Capabilities Generator To Get IntelliSense:
+ > Run The Capabilities Generator To Get All Available Capabilities:
 
-```bash
-pnpm tsx scripts/generate-capabilities.ts
-```
+   ```bash
+   pnpm tsx scripts/generate-capabilities.ts
+   ```
+
+   ***OR***
+
+   ```bash
+   pnpm capabilities
+   ```
 
  > This creates:
    - 'src/art/lib/nexart-capabilities.ts' - TypeScript types & helpers
@@ -439,7 +446,7 @@ const random = randomRange(10, 20);
 
  > Capabilities (src/lib/nexart-capabilities.ts)
 
-_**AUTO-GENERATED WHEN 'pnpm capabilities' IS RAN**_
+***AUTO-GENERATED WHEN 'pnpm capabilities' IS RAN***
 
 ---
 
@@ -453,7 +460,7 @@ _**AUTO-GENERATED WHEN 'pnpm capabilities' IS RAN**_
    - Use helper libraries during development
    - Test in runner.html
    - Export to NexArt format when ready
-   - Deploy exported code to NexArt Protocol
+   - Deploy exported code to NexArt Platform
 
 ---
 
@@ -463,9 +470,9 @@ _**AUTO-GENERATED WHEN 'pnpm capabilities' IS RAN**_
 
  > Start Dev Server
 
-```bash
-pnpm dev
-```
+   ```bash
+   pnpm dev
+   ```
 
  > Edit Sketch File
 
@@ -521,6 +528,8 @@ pnpm dev
 ---
 
  > This project uses:
+   - NexArt Code Mode SDK - Overall design standards and creation excellence
+   - NexArt UI Renderer - UI Component SDK to effectively develop amazing art
    - pnpm - Fast, efficient package manager
    - Next.js 16 - React framework
    - TypeScript - Type safety
@@ -550,17 +559,22 @@ pnpm dev
 
  > NexArt UI Renderer SDK Source Code - [UI Renderer SDK Source Code](https://github.com/artnames/nexart-ui-renderer)
 
+ > NexArt Platform Quick Start Guide - [NexArt Quick Start Guide](https://www.nexart.xyz/guide)
+
+ > NexArt Platform Frequently Asked Questions - [NexArt FAQs](https://www.nexart.xyz/faq)
+
 ---
 
 ### Future Plans
 
 ---
 
-[ ] React frontend for sketch gallery
-[ ] Live parameter controls
-[ ] Sketch versioning system
-[ ] Automated deployment to NexArt
-[ ] Real-time collaboration features
+[ ] Next.js frontend for sketch gallery and visual design studio
+[ ] WYSIWYG style sketch editor with drag and drop effect blocks
+[ ] Live parameter controls for functions and effects
+[ ] Sketch versioning system for evolving art projects
+[ ] Automated deployment to NexArt directly from the studio UI
+[ ] Real-time collaboration features for co-op art design
 
 ---
 
@@ -568,7 +582,7 @@ pnpm dev
 
 ---
 
- > MIT License - _**See LICENSE File**_
+ > MIT License - ***See LICENSE File***
 
 ---
 
@@ -576,7 +590,7 @@ pnpm dev
 
 ---
 
- > We Welcome Any And All Potential And Appropriate Contributions - _**See CONTRIBUTING.md File**_
+ > We Welcome And Will Consider All Contribution Requests - ***See CONTRIBUTING.md File***
 
 ---
 
@@ -584,14 +598,14 @@ pnpm dev
 
 ---
 
- > For Questions, Concerns, Or Otherwise Regarding This Project Contact _**BEDLAM520 Development**_ At:
+ > For Questions, Concerns, Or Otherwise Regarding This Project Contact ***BEDLAM520 Development*** At:
    - E-Mail - [E-Mail](mailto://bedlam520@gmail.com)
    - Farcaster - [Farcaster](https://farcaster.xyz/bedlam520.eth)
    - BaseApp - [BaseApp](https://base.app/profile/bedlam520.eth)
    - X (Twitter) - [X](https://x.com/bedlam520)
    - GitHub - [GitHub](https://github.com/bedlam520dev)
 
- > For Anything Specifically Regarding The NexArt Platform Or Protocol Contact _**NexArt Team**_ At:
+ > For Anything Specifically Regarding The NexArt Platform Or Protocol Contact ***NexArt Team*** At:
    - E-Mail - [E-Mail](mailto://contact@artnames.io)
    - Farcaster - [Farcaster](https://farcaster.xyz/nexart.eth)
    - BaseApp - [BaseApp](https://base.app/profile/arrotu)
