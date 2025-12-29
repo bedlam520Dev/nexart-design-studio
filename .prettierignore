@@ -37,3 +37,10 @@ components.json
 # Developer
 _dev/*
 _devlogs/*
+
+# Git/GH
+.git/*
+.github/*
+
+# VS Code
+.vscode/*

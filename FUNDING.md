@@ -4,7 +4,8 @@ Thank you for considering supporting my work! You can contribute through the fol
 
 ## Traditional Payment
 
-**PayPal**
+> **PayPal**
+
 - [paypal.me/bedlam520](https://paypal.me/bedlam520)
 
 ---
@@ -15,7 +16,7 @@ Thank you for considering supporting my work! You can contribute through the fol
 
 ---
 
-<img src=".github/assets/evm_qr.png" alt="EVM Address QR" width="200"/>
+![EVM Address QR](.github/assets/evm_qr.png)
 
 ---
 
@@ -37,7 +38,7 @@ Send ETH, USDC, or any ERC-20 tokens to:
 
 ---
 
-<img src=".github/assets/solana_qr.png" alt="Solana Address QR" width="200"/>
+![Solana Address QR](.github/assets/solana_qr.png)
 
 ---
 

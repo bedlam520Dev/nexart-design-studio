@@ -6,7 +6,7 @@
 
 ---
 
- > Personal creative coding environment for NexArt art piece development with Canvas2D, combining the power of Next.js, TypeScript, and the NexArt Protocol.
+> Personal creative coding environment for NexArt art piece development with Canvas2D, combining the power of Next.js, TypeScript, and the NexArt Protocol.
 
 ---
 
@@ -22,23 +22,24 @@
 
 ---
 
- > Ensure You Have The Following Installed:
-   - **Node.js** ^22.x (package set to '22.x')
-   - **pnpm** ^10.x or (package set to '10.26.2')
-     - IF NEEDED RUN: 
+> Ensure You Have The Following Installed:
 
-       ```bash
-       npm install -g pnpm
-       ```
+- **Node.js** ^22.x (package set to '22.x')
+- **pnpm** ^10.x or (package set to '10.26.2')
+  - IF NEEDED RUN:
 
-       **OR**
+    ```bash
+    npm install -g pnpm
+    ```
 
-       ```bash
-       corepack enable
-       corepack use pnpm@10.26.2
-       ```
+    **OR**
 
-   - **Git**
+    ```bash
+    corepack enable
+    corepack use pnpm@10.26.2
+    ```
+
+- **Git**
 
 ---
 
@@ -46,29 +47,29 @@
 
 ---
 
- > Clone The Repository
+> Clone The Repository
 
-   ```bash
-   git clone https://github.com/bedlam520dev/nexart-design-studio.git
-   ```
+```bash
+git clone https://github.com/bedlam520dev/nexart-design-studio.git
+```
 
- > Navigate To Project Directory
+> Navigate To Project Directory
 
-   ```bash
-   cd nexart-design-studio
-   ```
+```bash
+cd nexart-design-studio
+```
 
- > Install Dependencies
+> Install Dependencies
 
-   ```bash
-   pnpm install
-   ```
+```bash
+pnpm install
+```
 
- > Generate NexArt Capabilities Reference File
+> Generate NexArt Capabilities Reference File
 
-   ```bash
-   pnpm capabilities
-   ```
+```bash
+pnpm capabilities
+```
 
 ---
 
@@ -76,25 +77,25 @@
 
 ---
 
- > Start Development Server
+> Start Development Server
 
-   ```bash
-   pnpm dev
-   ```
+```bash
+pnpm dev
+```
 
-   - Navigate to 'http://localhost:3000/runner.html' to see your art!
+- Navigate to 'http://localhost:3000/runner.html' to see your art!
 
- > Build For Production
+> Build For Production
 
-   ```bash
-   pnpm build
-   ```
+```bash
+pnpm build
+```
 
- > Start Production Server
+> Start Production Server
 
-   ```bash
-   pnpm start
-   ```
+```bash
+pnpm start
+```
 
 ---
 
@@ -102,35 +103,35 @@
 
 ---
 
- > Type Check → '_devlogs/typecheck-*.log'
+> Type Check → '\_devlogs/typecheck-\*.log'
 
-   ```bash
-   pnpm check-types
-   ```
+```bash
+pnpm check-types
+```
 
- > Lint Code → '_devlogs/lint-*.log'
+> Lint Code → '\_devlogs/lint-\*.log'
 
-   ```bash
-   pnpm lint
-   ```
+```bash
+pnpm lint
+```
 
- > Fix Lint Issues → '_devlogs/lint-fix-*.log'
+> Fix Lint Issues → '\_devlogs/lint-fix-\*.log'
 
-   ```bash
-   pnpm lint:fix
-   ```
+```bash
+pnpm lint:fix
+```
 
- > Format Code → '_devlogs/format-*.log'
+> Format Code → '\_devlogs/format-\*.log'
 
-   ```bash
-   pnpm format
-   ```
+```bash
+pnpm format
+```
 
- > Check Formatting → '_devlogs/format-check-*.log'
+> Check Formatting → '\_devlogs/format-check-\*.log'
 
-   ```bash
-   pnpm format:check
-   ```
+```bash
+pnpm format:check
+```
 
 ---
 
@@ -138,11 +139,11 @@
 
 ---
 
- > Runs All Checks With Logs
+> Runs All Checks With Logs
 
-   ```bash
-   pnpm validate
-   ```
+```bash
+pnpm validate
+```
 
 ---
 
@@ -150,11 +151,11 @@
 
 ---
 
- > Export Sketch To NexArt Compliant Snippet
+> Export Sketch To NexArt Compliant Snippet
 
-   ```bash
-   pnpm export:nexart src/art/pieces/[name]/sketch.ts
-   ```
+```bash
+pnpm export:nexart src/art/pieces/[name]/sketch.ts
+```
 
 ---
 
@@ -199,13 +200,13 @@ public/
 
 ---
 
- > Copy The Template
+> Copy The Template
 
-   ```bash
-   cp -r src/art/pieces/nexart-template src/art/pieces/[name]
-   ```
+```bash
+cp -r src/art/pieces/nexart-template src/art/pieces/[name]
+```
 
- > Edit Your Sketch
+> Edit Your Sketch
 
 ```ts
 /* src/art/pieces/[name]/sketch.ts */
@@ -242,13 +243,13 @@ export const sketch: NexArtSketch = { setup, draw };
 
 ---
 
- > Edit 'public/runner.html' at line 24:
+> Edit 'public/runner.html' at line 24:
 
-   ```ts
-   const { sketch } = await import('/src/art/pieces/[name]/sketch.ts');
-   ```
+```ts
+const { sketch } = await import('/src/art/pieces/[name]/sketch.ts');
+```
 
- > Then View At 'http://localhost:3000/runner.html'
+> Then View At 'http://localhost:3000/runner.html'
 
 ---
 
@@ -256,16 +257,17 @@ export const sketch: NexArtSketch = { setup, draw };
 
 ---
 
- > ***CRITICAL***: NexArt has **STRICT** requirements:
+> **_CRITICAL_**: NexArt has **STRICT** requirements:
 
-   > ✅ Allowed:
+> ✅ Allowed:
+
      - setup() function (optional)
      - draw() function (required)
      - All logic inline in these functions
      - Math, canvas 2D API, basic JS
 
+> ❌ NOT Allowed:
 
-   > ❌ NOT Allowed:
      - Helper functions
      - Global variables
      - External libraries in deployment
@@ -277,13 +279,13 @@ export const sketch: NexArtSketch = { setup, draw };
 
 ---
 
- >  Export Your Sketch (EXAMPLE)
+> Export Your Sketch (EXAMPLE)
 
-   ```bash
-   pnpm export:nexart src/art/pieces/generative-waves/sketch.ts
-   ```
+```bash
+pnpm export:nexart src/art/pieces/generative-waves/sketch.ts
+```
 
- > Output example (src/art/pieces/generative-waves/nexart-export.md):
+> Output example (src/art/pieces/generative-waves/nexart-export.md):
 
 ```nexart
 TITLE: Generative Waves
@@ -291,7 +293,7 @@ TITLE: Generative Waves
 function setup() {
   const width = canvas.width / (window.devicePixelRatio || 1);
   const height = canvas.height / (window.devicePixelRatio || 1);
-  
+
   ctx.fillStyle = '#0a0e27';
   ctx.fillRect(0, 0, width, height);
 }
@@ -301,44 +303,44 @@ function draw() {
   const height = canvas.height / (window.devicePixelRatio || 1);
   const centerX = width / 2;
   const centerY = height / 2;
-  
+
   ctx.fillStyle = 'rgba(10, 14, 39, 0.1)';
   ctx.fillRect(0, 0, width, height);
-  
+
   const waveCount = 8;
   const resolution = 200;
   const amplitude = 80;
   const frequency = 0.005;
   const noiseInfluence = 0.3;
-  
+
   const colors = ['#023e8a', '#0077b6', '#00b4d8'];
-  
+
   for (let w = 0; w < waveCount; w++) {
     const colorIndex = Math.floor((w / waveCount) * colors.length);
     ctx.strokeStyle = colors[Math.min(colorIndex, colors.length - 1)];
     ctx.lineWidth = 2;
     ctx.beginPath();
-    
+
     const yOffset = ((w / waveCount) - 0.5) * height * 0.6;
-    
+
     for (let i = 0; i <= resolution; i++) {
       const x = (i / resolution) * width;
       const t = frame * 0.01 + w * 0.5;
-      
+
       let y = Math.sin(x * frequency + t) * amplitude;
-      
+
       const noiseValue = Math.sin(x * 0.002 * 10 + t * 0.1) * Math.cos(w * 5);
       y += noiseValue * amplitude * noiseInfluence;
-      
+
       y += centerY + yOffset;
-      
+
       if (i === 0) {
         ctx.moveTo(x, y);
       } else {
         ctx.lineTo(x, y);
       }
     }
-    
+
     ctx.stroke();
   }
 }
@@ -350,7 +352,7 @@ function draw() {
 
 ---
 
- > The '@nexart/ui-renderer' package provides a declarative system for creating art.
+> The '@nexart/ui-renderer' package provides a declarative system for creating art.
 
 ---
 
@@ -358,7 +360,7 @@ function draw() {
 
 ---
 
- > Edit 'public/runner.html' and set 'useUIRenderer = true':
+> Edit 'public/runner.html' and set 'useUIRenderer = true':
 
 ```ts
 import { createSystem, previewSystem } from '@nexart/ui-renderer';
@@ -368,9 +370,9 @@ const system = createSystem({
   background: { color: 'blue', texture: 'noise' },
   elements: [
     { type: 'waves', axis: 'x', amplitude: 0.4, frequency: 0.7 },
-    { type: 'dots', distribution: 'radial', count: 400 }
+    { type: 'dots', distribution: 'radial', count: 400 },
   ],
-  motion: { source: 'time', speed: 0.2 }
+  motion: { source: 'time', speed: 0.2 },
 });
 
 previewSystem(system, canvas, { mode: 'loop' }).start();
@@ -382,21 +384,22 @@ previewSystem(system, canvas, { mode: 'loop' }).start();
 
 ---
 
- > Run The Capabilities Generator To Get All Available Capabilities:
+> Run The Capabilities Generator To Get All Available Capabilities:
 
-   ```bash
-   pnpm tsx scripts/generate-capabilities.ts
-   ```
+```bash
+pnpm tsx scripts/generate-capabilities.ts
+```
 
-   ***OR***
+**_OR_**
 
-   ```bash
-   pnpm capabilities
-   ```
+```bash
+pnpm capabilities
+```
 
- > This creates:
-   - 'src/art/lib/nexart-capabilities.ts' - TypeScript types & helpers
-   - 'docs/nexart-reference.md' - Human-readable reference
+> This creates:
+
+- 'src/art/lib/nexart-capabilities.ts' - TypeScript types & helpers
+- 'docs/nexart-reference.md' - Human-readable reference
 
 ---
 
@@ -404,7 +407,7 @@ previewSystem(system, canvas, { mode: 'loop' }).start();
 
 ---
 
- > Canvas (src/art/lib/canvas.ts)
+> Canvas (src/art/lib/canvas.ts)
 
 ```ts
 import { setupCanvas, clear, centerCanvas, saveFrame } from '@/art/lib/canvas';
@@ -415,10 +418,15 @@ const { x, y, width, height } = centerCanvas(ctx);
 saveFrame(canvas, 'my-art-frame');
 ```
 
- > Colors (src/art/lib/colors.ts)
+> Colors (src/art/lib/colors.ts)
 
 ```ts
-import { palette, interpolateColor, colorScale, withAlpha } from '@/art/lib/colors';
+import {
+  palette,
+  interpolateColor,
+  colorScale,
+  withAlpha,
+} from '@/art/lib/colors';
 
 const color = palette.neon[0];
 const mixed = interpolateColor('#ff0000', '#0000ff', 0.5);
@@ -426,7 +434,7 @@ const scale = colorScale(['#000', '#fff'], 10);
 const transparent = withAlpha('#ff0000', 0.5);
 ```
 
- > Noise (src/art/lib/noise.ts)
+> Noise (src/art/lib/noise.ts)
 
 ```ts
 import { noise, fbm, turbulence } from '@/art/lib/noise';
@@ -434,7 +442,7 @@ import { noise, fbm, turbulence } from '@/art/lib/noise';
 const value = noise.get2D(x * 0.01, y * 0.01);
 const fractal = fbm(x, y, 4, 0.5);
 const turb = turbulence(x, y, 64);
-Math (src/art/lib/math.ts)
+Math(src / art / lib / math.ts);
 import { lerp, map, clamp, dist, randomRange } from '@/art/lib/math';
 
 const interpolated = lerp(0, 100, 0.5); // 50
@@ -444,9 +452,9 @@ const distance = dist(0, 0, 3, 4); // 5
 const random = randomRange(10, 20);
 ```
 
- > Capabilities (src/lib/nexart-capabilities.ts)
+> Capabilities (src/lib/nexart-capabilities.ts)
 
-***AUTO-GENERATED WHEN 'pnpm capabilities' IS RAN***
+**_AUTO-GENERATED WHEN 'pnpm capabilities' IS RAN_**
 
 ---
 
@@ -456,11 +464,12 @@ const random = randomRange(10, 20);
 
 #### Standard Workflow
 
- > Create Sketch In 'src/art/pieces/[name]/sketch.ts'
-   - Use helper libraries during development
-   - Test in runner.html
-   - Export to NexArt format when ready
-   - Deploy exported code to NexArt Platform
+> Create Sketch In 'src/art/pieces/[name]/sketch.ts'
+
+- Use helper libraries during development
+- Test in runner.html
+- Export to NexArt format when ready
+- Deploy exported code to NexArt Platform
 
 ---
 
@@ -468,17 +477,17 @@ const random = randomRange(10, 20);
 
 ---
 
- > Start Dev Server
+> Start Dev Server
 
-   ```bash
-   pnpm dev
-   ```
+```bash
+pnpm dev
+```
 
- > Edit Sketch File
+> Edit Sketch File
 
- > Refresh Browser To See Changes
+> Refresh Browser To See Changes
 
- > Use Cmd/Ctrl+S To Save Frame (**If Implemented In Sketch**)
+> Use Cmd/Ctrl+S To Save Frame (**If Implemented In Sketch**)
 
 ---
 
@@ -486,21 +495,24 @@ const random = randomRange(10, 20);
 
 ---
 
- > Prettier (prettier.config.mjs)
-   - Auto-sorts Tailwind classes
-   - Enforces consistent formatting
-   - Configured for minimal noise
+> Prettier (prettier.config.mjs)
 
- > ESLint (eslint.config.mjs)
-   - Next.js + TypeScript rules
-   - React hooks linting
-   - Import organization
-   - Accessibility checks
+- Auto-sorts Tailwind classes
+- Enforces consistent formatting
+- Configured for minimal noise
 
- > TypeScript (tsconfig.json)
-   - Strict mode enabled
-   - Path aliases (@/* → src/*)
-   - Next.js optimization
+> ESLint (eslint.config.mjs)
+
+- Next.js + TypeScript rules
+- React hooks linting
+- Import organization
+- Accessibility checks
+
+> TypeScript (tsconfig.json)
+
+- Strict mode enabled
+- Path aliases (@/_ → src/_)
+- Next.js optimization
 
 ---
 
@@ -508,18 +520,20 @@ const random = randomRange(10, 20);
 
 ---
 
- > ✅ Do:
-   - Focus on one sketch at a time
-   - Use the template for consistency
-   - Let Prettier handle formatting
-   - Test frequently in runner.html
-   - Export early, export often
+> ✅ Do:
 
- > ❌ Avoid:
-   - Over-engineering during creative flow
-   - Premature optimization
-   - Too many files open at once
-   - Skipping the export step
+- Focus on one sketch at a time
+- Use the template for consistency
+- Let Prettier handle formatting
+- Test frequently in runner.html
+- Export early, export often
+
+> ❌ Avoid:
+
+- Over-engineering during creative flow
+- Premature optimization
+- Too many files open at once
+- Skipping the export step
 
 ---
 
@@ -527,15 +541,16 @@ const random = randomRange(10, 20);
 
 ---
 
- > This project uses:
-   - NexArt Code Mode SDK - Overall design standards and creation excellence
-   - NexArt UI Renderer - UI Component SDK to effectively develop amazing art
-   - pnpm - Fast, efficient package manager
-   - Next.js 16 - React framework
-   - TypeScript - Type safety
-   - Tailwind CSS v4 - Utility-first CSS
-   - ESLint - Code quality
-   - Prettier - Code readability and consistency
+> This project uses:
+
+- NexArt Code Mode SDK - Overall design standards and creation excellence
+- NexArt UI Renderer - UI Component SDK to effectively develop amazing art
+- pnpm - Fast, efficient package manager
+- Next.js 16 - React framework
+- TypeScript - Type safety
+- Tailwind CSS v4 - Utility-first CSS
+- ESLint - Code quality
+- Prettier - Code readability and consistency
 
 ---
 
@@ -543,25 +558,25 @@ const random = randomRange(10, 20);
 
 ---
 
- > NexArt Protocol - [Protocol](https://nexart.io)
+> NexArt Protocol - [Protocol](https://nexart.io)
 
- > NexArt Builders Guide - [Builders](https://nexart.io/builders)
+> NexArt Builders Guide - [Builders](https://nexart.io/builders)
 
- > Code Mode Reference - [Quick Reference](https://nexart.io/code-mode-quick-reference)
+> Code Mode Reference - [Quick Reference](https://nexart.io/code-mode-quick-reference)
 
- > Execution Details - [Code Mode Execution](https://nexart.io/code-mode-execution)
+> Execution Details - [Code Mode Execution](https://nexart.io/code-mode-execution)
 
- > NexArt Platform - [NexArt App](https://nexart.xyz)
+> NexArt Platform - [NexArt App](https://nexart.xyz)
 
- > NexArt Static Builder App - [NexArt Static Builder App](https://buildwithnexartprotocol.xyz)
+> NexArt Static Builder App - [NexArt Static Builder App](https://buildwithnexartprotocol.xyz)
 
- > NexArt Canonical SDK Source Code - [Code Mode SDK Source Code](https://github.com/artnames/nexart-codemode-sdk)
+> NexArt Canonical SDK Source Code - [Code Mode SDK Source Code](https://github.com/artnames/nexart-codemode-sdk)
 
- > NexArt UI Renderer SDK Source Code - [UI Renderer SDK Source Code](https://github.com/artnames/nexart-ui-renderer)
+> NexArt UI Renderer SDK Source Code - [UI Renderer SDK Source Code](https://github.com/artnames/nexart-ui-renderer)
 
- > NexArt Platform Quick Start Guide - [NexArt Quick Start Guide](https://www.nexart.xyz/guide)
+> NexArt Platform Quick Start Guide - [NexArt Quick Start Guide](https://www.nexart.xyz/guide)
 
- > NexArt Platform Frequently Asked Questions - [NexArt FAQs](https://www.nexart.xyz/faq)
+> NexArt Platform Frequently Asked Questions - [NexArt FAQs](https://www.nexart.xyz/faq)
 
 ---
 
@@ -582,7 +597,7 @@ const random = randomRange(10, 20);
 
 ---
 
- > MIT License - ***See LICENSE File***
+> MIT License - **_See LICENSE File_**
 
 ---
 
@@ -590,7 +605,7 @@ const random = randomRange(10, 20);
 
 ---
 
- > We Welcome And Will Consider All Contribution Requests - ***See CONTRIBUTING.md File***
+> We Welcome And Will Consider All Contribution Requests - **_See CONTRIBUTING.md File_**
 
 ---
 
@@ -598,18 +613,20 @@ const random = randomRange(10, 20);
 
 ---
 
- > For Questions, Concerns, Or Otherwise Regarding This Project Contact ***BEDLAM520 Development*** At:
-   - E-Mail - [E-Mail](mailto://bedlam520@gmail.com)
-   - Farcaster - [Farcaster](https://farcaster.xyz/bedlam520.eth)
-   - BaseApp - [BaseApp](https://base.app/profile/bedlam520.eth)
-   - X (Twitter) - [X](https://x.com/bedlam520)
-   - GitHub - [GitHub](https://github.com/bedlam520dev)
+> For Questions, Concerns, Or Otherwise Regarding This Project Contact **_BEDLAM520 Development_** At:
 
- > For Anything Specifically Regarding The NexArt Platform Or Protocol Contact ***NexArt Team*** At:
-   - E-Mail - [E-Mail](mailto://contact@artnames.io)
-   - Farcaster - [Farcaster](https://farcaster.xyz/nexart.eth)
-   - BaseApp - [BaseApp](https://base.app/profile/arrotu)
-   - X (Twitter) - [X](https://x.com/ArtNames_io)
-   - GitHub - [GitHub](https://github.com/artnames)
+- E-Mail - [E-Mail](mailto://bedlam520@gmail.com)
+- Farcaster - [Farcaster](https://farcaster.xyz/bedlam520.eth)
+- BaseApp - [BaseApp](https://base.app/profile/bedlam520.eth)
+- X (Twitter) - [X](https://x.com/bedlam520)
+- GitHub - [GitHub](https://github.com/bedlam520dev)
+
+> For Anything Specifically Regarding The NexArt Platform Or Protocol Contact **_NexArt Team_** At:
+
+- E-Mail - [E-Mail](mailto://contact@artnames.io)
+- Farcaster - [Farcaster](https://farcaster.xyz/nexart.eth)
+- BaseApp - [BaseApp](https://base.app/profile/arrotu)
+- X (Twitter) - [X](https://x.com/ArtNames_io)
+- GitHub - [GitHub](https://github.com/artnames)
 
 ---

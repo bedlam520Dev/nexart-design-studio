@@ -1,6 +1,10 @@
 export interface NexArtSketch {
   setup?: (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => void;
-  draw: (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D, frame: number) => void;
+  draw: (
+    canvas: HTMLCanvasElement,
+    ctx: CanvasRenderingContext2D,
+    frame: number
+  ) => void;
   cleanup?: () => void;
 }
 

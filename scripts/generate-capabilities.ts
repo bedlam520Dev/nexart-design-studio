@@ -1,8 +1,17 @@
-import { getCapabilities } from '@nexart/ui-renderer';
+import {
+  getCapabilities,
+  getPrimitiveTypes,
+  getMotionSources,
+  getBackgroundTextures,
+  type PrimitiveCapability,
+} from '@nexart/ui-renderer';
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const caps = getCapabilities();
+const primitiveTypes = getPrimitiveTypes();
+const motionSources = getMotionSources();
+const backgroundTextures = getBackgroundTextures();
 
 const generateTypesFile = () => {
   const content = `// Auto-generated from NexArt capabilities
@@ -10,12 +19,12 @@ const generateTypesFile = () => {
 
 export const capabilities = ${JSON.stringify(caps, null, 2)} as const;
 
-export type ElementType = ${caps.elements.map((e: any) => `'${e.type}'`).join(' | ')};
-export type BackgroundTexture = ${caps.backgrounds.textures.map((t: string) => `'${t}'`).join(' | ')};
-export type MotionSource = ${caps.motion.sources.map((s: string) => `'${s}'`).join(' | ')};
+export type ElementType = ${primitiveTypes.map((type) => `'${type}'`).join(' | ')};
+export type BackgroundTexture = ${backgroundTextures.map((t) => `'${t}'`).join(' | ')};
+export type MotionSource = ${motionSources.map((s) => `'${s}'`).join(' | ')};
 
 export const elementHelpers = {
-${caps.elements.map((el: any) => `  ${el.type}: ${JSON.stringify(el)}`).join(',\n')}
+${caps.primitives.map((el: PrimitiveCapability) => `  ${el.type}: ${JSON.stringify(el)}`).join(',\n')}
 };
 `;
 
@@ -23,7 +32,7 @@ ${caps.elements.map((el: any) => `  ${el.type}: ${JSON.stringify(el)}`).join(',\
     join(process.cwd(), 'src/art/lib/nexart-capabilities.ts'),
     content
   );
-  
+
   console.log('✅ Generated nexart-capabilities.ts');
 };
 
@@ -32,27 +41,28 @@ const generateDocsFile = () => {
 
 Generated: ${new Date().toISOString()}
 
-## Elements
+## Primitives
 
-${caps.elements.map((el: any) => `### ${el.type}
-- **Properties**: ${Object.keys(el.properties || {}).join(', ')}
+${caps.primitives
+  .map(
+    (el: PrimitiveCapability) => `### ${el.type}
+- **Parameters**: ${Object.keys(el.parameters || {}).join(', ')}
 - **Description**: ${el.description || 'N/A'}
-`).join('\n')}
+`
+  )
+  .join('\n')}
 
 ## Backgrounds
 
-**Textures**: ${caps.backgrounds.textures.join(', ')}
+**Textures**: ${backgroundTextures.join(', ')}
 
 ## Motion
 
-**Sources**: ${caps.motion.sources.join(', ')}
+**Sources**: ${motionSources.join(', ')}
 `;
 
-  writeFileSync(
-    join(process.cwd(), 'docs/nexart-reference.md'),
-    markdown
-  );
-  
+  writeFileSync(join(process.cwd(), 'docs/nexart-reference.md'), markdown);
+
   console.log('✅ Generated nexart-reference.md');
 };
 

@@ -10,11 +10,8 @@ export const palette = {
 export const randomColor = (colors: string[]) =>
   colors[Math.floor(Math.random() * colors.length)];
 
-export const interpolateColor = (
-  color1: string,
-  color2: string,
-  t: number
-) => chroma.mix(color1, color2, t, 'lab').hex();
+export const interpolateColor = (color1: string, color2: string, t: number) =>
+  chroma.mix(color1, color2, t, 'lab').hex();
 
 export const colorScale = (colors: string[], steps: number) =>
   chroma.scale(colors).mode('lab').colors(steps);

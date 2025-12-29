@@ -1,3 +1,4 @@
 github: [bedlam520]
 patreon: [bedlam520]
-custom: ["https://github.com/bedlam520Dev/nexart-design-studio/blob/main/FUNDING.md"]
+custom:
+  ['https://github.com/bedlam520Dev/nexart-design-studio/blob/main/FUNDING.md']

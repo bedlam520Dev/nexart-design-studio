@@ -33,7 +33,7 @@ export const fbm = (
 
 export const turbulence = (x: number, y: number, size: number) => {
   let value = 0;
-  let initialSize = size;
+  const initialSize = size;
 
   while (size >= 1) {
     value += Math.abs(noise.get2D(x / size, y / size)) * size;
