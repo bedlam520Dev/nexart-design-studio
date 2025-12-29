@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexArt Studio Runner</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    canvas {
+      display: block;
+      max-width: 100vw;
+      max-height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script type="module">
+    import { createSystem, previewSystem } from '@nexart/ui-renderer';
+    
+    const canvas = document.getElementById('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Example 1: UI Renderer System
+    const useUIRenderer = false;
+    
+    if (useUIRenderer) {
+      const system = createSystem({
+        seed: Math.floor(Math.random() * 1000000),
+        background: { color: '#0a0e27', texture: 'noise' },
+        elements: [
+          { type: 'waves', axis: 'x', amplitude: 0.4, frequency: 0.7 },
+          { type: 'dots', distribution: 'radial', count: 400 }
+        ],
+        motion: { source: 'time', speed: 0.2 }
+      });
+
+      previewSystem(system, canvas, { mode: 'loop' }).start();
+    } else {
+      // Example 2: Custom Sketch
+      const { sketch } = await import('/src/art/pieces/flowing-particles/sketch.ts');
+      const ctx = canvas.getContext('2d');
+      
+      if (sketch.setup) {
+        sketch.setup(canvas, ctx);
+      }
+      
+      let frame = 0;
+      const animate = () => {
+        sketch.draw(canvas, ctx, frame);
+        frame++;
+        requestAnimationFrame(animate);
+      };
+      
+      animate();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+.pnp.js
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+
+# Lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Generated files
+*.min.js
+*.min.css
+
+# Config that shouldn't be formatted
+.env*
+.gitignore
+.prettierignore
+
+# Cache
+.cache/
+.turbo/
+.eslintcache
+
+# TypeScript
+next-env.d.ts
+*.tsbuildinfo
+
+# shadcn
+components.json
+
+# Developer
+_dev/*
+_devlogs/*
